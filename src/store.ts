@@ -1,6 +1,6 @@
 import { HomeAssistant } from "custom-card-helpers";
-import { create } from "zustand";
-import { Config } from "./types";
+import create from "zustand";
+import { Config } from "./config";
 
 interface Store {
   hass?: HomeAssistant;

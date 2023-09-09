@@ -1,8 +1,34 @@
 import { z } from "zod";
 
+const conditionalFormattingSchema = z.object({
+  variableName: z.string(),
+  rules: z.array(
+    z.union([
+      z.object({
+        type: z.literal("any-value"),
+        expression: z.string(),
+        greaterThan: z.number().optional(),
+        lessThan: z.number().optional(),
+        value: z.string(),
+      }),
+      z.object({
+        type: z.literal("color-gradient"),
+        expression: z.string(),
+        scale: z.array(
+          z.object({
+            stateValue: z.number(),
+            color: z.string(),
+          })
+        ),
+      }),
+    ])
+  ),
+});
+
 const configItemSvgSchema = z.object({
   type: z.literal("svg"),
   source: z.string(),
+  conditionalFormatting: z.array(conditionalFormattingSchema),
 });
 const configItemStateCardContentSchema = z.object({
   type: z.literal("state-card-content"),

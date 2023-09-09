@@ -14,14 +14,12 @@ export function CanvasItemStateCardContent({
     <div
       style={{
         position: "absolute",
-        left: 0,
-        top: 0,
-        width: "100%",
-        height: "100%",
+        left: "10%",
+        right: "10%",
+        bottom: "10%",
       }}
     >
       <ha-card>
-        <h1 class="card-header">Rubrik</h1>
         <state-card-content hass={hass} stateObj={entity} />
       </ha-card>
     </div>

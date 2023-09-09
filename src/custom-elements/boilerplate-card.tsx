@@ -14,6 +14,7 @@ export class BoilerplateCard extends HTMLElement {
   setConfig(config: unknown) {
     const result = configSchema.safeParse(config);
     if (!result.success) {
+      console.error(result.error);
       const errorMessage = generateErrorMessage(result.error.issues);
       throw new Error(errorMessage);
     } else {

@@ -25,31 +25,10 @@ const conditionalFormattingSchema = z.object({
   ),
 });
 
-const configItemSvgSchema = z.object({
-  type: z.literal("svg"),
+export const configSchema = z.object({
+  type: z.literal("custom:conditional-formatting"),
   source: z.string(),
   conditionalFormatting: z.array(conditionalFormattingSchema),
 });
-const configItemStateCardContentSchema = z.object({
-  type: z.literal("state-card-content"),
-  entityId: z.string(),
-});
-const configItemStateLabelBadgeSchema = z.object({
-  type: z.literal("state-label-badge"),
-  entityId: z.string(),
-});
-
-const itemSchema = z.union([
-  configItemSvgSchema,
-  configItemStateCardContentSchema,
-  configItemStateLabelBadgeSchema,
-]);
-
-export const configSchema = z.object({
-  type: z.literal("custom:boilerplate-card"),
-  items: z.array(itemSchema),
-});
 
 export type Config = z.infer<typeof configSchema>;
-
-export type ConfigItem = z.infer<typeof itemSchema>;

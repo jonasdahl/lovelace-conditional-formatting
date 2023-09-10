@@ -1,4 +1,4 @@
-// Entrypoint from hass
+// Entrypoint from hass for dev
 
 import "vite/modulepreload-polyfill";
 
@@ -9,5 +9,5 @@ document.head.appendChild(viteScript);
 
 const main = document.createElement("script");
 main.type = "module";
-main.src = "http://localhost:5173/src/index.tsx";
+main.src = "http://localhost:5173/src/index.ts";
 document.head.appendChild(main);

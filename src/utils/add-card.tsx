@@ -6,14 +6,12 @@ type CardMeta = {
 };
 
 declare global {
-  // eslint-disable-next-line no-unused-vars
   interface Window {
-    customCards?: any[];
+    customCards?: unknown[];
   }
 }
 
-export function addCard(cardMeta: CardMeta, element: CustomElementConstructor) {
-  customElements.define(cardMeta.type, element);
+export function defineCustomCard(cardMeta: CardMeta) {
   window.customCards = window.customCards || [];
   window.customCards.push(cardMeta);
 }

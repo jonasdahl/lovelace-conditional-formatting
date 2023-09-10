@@ -1,11 +1,11 @@
 import { HomeAssistant } from "custom-card-helpers";
 import { render } from "preact";
 import { generateErrorMessage } from "zod-error";
-import { configSchema } from "../config";
-import { Editor } from "../editor";
+import { Config, configSchema } from "../config";
+import { ConditionalFormatting as ConditionalFormattingComponent } from "../lib/conditional-formatting";
 import store from "../store";
 
-export class BoilerplateCardEditor extends HTMLElement {
+export class ConditionalFormatting extends HTMLElement {
   set hass(hass: HomeAssistant | undefined) {
     store.setState({ hass });
     this._render();
@@ -23,11 +23,19 @@ export class BoilerplateCardEditor extends HTMLElement {
     this._render();
   }
 
+  static getStubConfig(): Config {
+    return {
+      type: "custom:conditional-formatting",
+      conditionalFormatting: [],
+      source: "",
+    };
+  }
+
   private _render = () => {
-    render(<Editor />, this);
+    render(<ConditionalFormattingComponent />, this);
   };
 
   getCardSize() {
-    return 1;
+    return 4;
   }
 }

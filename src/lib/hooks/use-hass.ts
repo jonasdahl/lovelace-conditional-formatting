@@ -1,3 +1,3 @@
-import store from "../store";
+import store from "../../store";
 
 export const useHass = () => store(({ hass }) => hass);

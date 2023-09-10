@@ -1,7 +1,7 @@
 {
-  "name": "hass-test",
+  "name": "lovelace-conditional-formatting",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,19 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.8.1",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mdi/js": "^7.2.96",
     "@tanstack/react-query": "^4.35.0",
-    "@tldraw/tldraw": "2.0.0-alpha.14",
-    "@types/colormap": "^2.3.2",
-    "@types/parse-color": "^1.0.1",
     "colormap": "^2.3.2",
     "custom-card-helpers": "^1.9.0",
-    "framer-motion": "^10.16.4",
     "parse-color": "^1.0.0",
-    "pikaso-react-hook": "^2.1.1",
     "preact": "^10.17.1",
     "remeda": "^1.26.0",
     "zod": "^3.22.2",
@@ -30,6 +21,8 @@
     "zustand": "^4.4.1"
   },
   "devDependencies": {
+    "@types/colormap": "^2.3.2",
+    "@types/parse-color": "^1.0.1",
     "@preact/preset-vite": "^2.5.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
